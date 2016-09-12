@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"	
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.1.xsd
+	http://code.alibabatech.com/schema/dubbo        
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="false"> 
+	<!-- url="dubbo://127.0.0.1:20892/com.zlebank.service.manager.app.ManagerShiroApp"  -->
+    <dubbo:reference id="publishProductApp" interface="com.zlebank.service.business.app.PublishProductApp" group="group01" version="1.0" />
+    <dubbo:reference id="chargeApp" interface="com.zlebank.service.business.app.ChargeApp" group="group01" version="1.0" />
+    <dubbo:reference id="managerShiroApp" interface="com.zlebank.service.manager.app.ManagerShiroApp" group="group01" version="1.0" />
+    <dubbo:reference id="loginAccountApp" interface="com.zlebank.service.manager.app.LoginAccountApp" group="group01" version="1.0" />
+    <dubbo:reference id="roleResourcePermApp" interface="com.zlebank.service.manager.app.RoleResourcePermApp" group="group01" version="1.0" />
+	<dubbo:reference id="custPersonApp" interface="com.zlebank.service.manager.app.CustPersonApp" group="group01" version="1.0" />
+	<dubbo:reference id="custBankApp" interface="com.zlebank.service.manager.app.CustBankApp" group="group01" version="1.0" />
+	<dubbo:reference id="quartzServiceApp" interface="com.zlebank.service.manager.app.QuartzServiceApp" group="group01" version="1.0" />
+	<dubbo:reference id="custEnterpriseApp" interface="com.zlebank.service.manager.app.CustEnterpriseApp" group="group01" version="1.0" />
+	<dubbo:reference id="tradeOrderApp" interface="com.zlebank.service.manager.app.TradeOrderApp" group="group01" version="1.0" />
+	<dubbo:reference id="tradeProcessApp" interface="com.zlebank.service.manager.app.TradeProcessApp" group="group01" version="1.0" />
+	<dubbo:reference id="standardProductQueryApp" interface="com.zlebank.service.manager.app.StandardProductQueryApp" group="group01" version="1.0" />
+	<dubbo:reference id="newRechargeApp" interface="com.zlebank.service.manager.app.NewRechargeApp" group="group01" version="1.0" />
+	<dubbo:reference id="newWithdrawApp" interface="com.zlebank.service.manager.app.NewWithdrawApp" group="group01" version="1.0" />
+	<dubbo:reference id="positiveApp" interface="com.zlebank.service.manager.app.PositiveApp" group="group01" version="1.0" />
+	<dubbo:reference id="positionApp" interface="com.zlebank.service.manager.app.PositionApp" group="group01" version="1.0" />
+	<dubbo:reference id="incomeApp" interface="com.zlebank.service.manager.app.IncomeApp" group="group01" version="1.0" />
+	<dubbo:reference id="billBalanceApp" interface="com.zlebank.service.manager.app.BillBalanceApp" group="group01" version="1.0" />
+	<dubbo:reference id="dealTypeApp" interface="com.zlebank.service.manager.app.DealTypeApp" group="group01" version="1.0" />
+	<dubbo:reference id="accountRuleApp" interface="com.zlebank.service.manager.app.AccountRuleApp" group="group01" version="1.0" />
+	<dubbo:reference id="generalParameterApp" interface="com.zlebank.service.manager.app.GeneralParameterApp" group="group01" version="1.0" />
+	<dubbo:reference id="productShelfApp" interface="com.zlebank.service.manager.app.ProductShelfApp" group="group01" version="1.0" />
+	<dubbo:reference id="productAuditApp" interface="com.zlebank.service.business.app.ProductAuditApp" group="group01" version="1.0" />
+	<dubbo:reference id="dayApp" interface="com.zlebank.service.manager.app.DayApp" group="group01" version="1.0" />
+	<dubbo:reference id="bankTypeApp" interface="com.zlebank.service.manager.app.BankTypeApp" group="group01" version="1.0" />
+	<dubbo:reference id="fundsLimitBankApp" interface="com.zlebank.service.manager.app.FundsLimitBankApp" group="group01" version="1.0" />
+	<dubbo:reference id="riskBlackWhiteApp" interface="com.zlebank.service.manager.app.RiskBlackWhiteApp" group="group01" version="1.0" />
+	<dubbo:reference id="custUserApp" interface="com.zlebank.service.manager.app.CustUserApp" group="group01" version="1.0" />
+	<dubbo:reference id="paymentApp" interface="com.zlebank.service.manager.app.PaymentApp" group="group01" version="1.0" />
+	<dubbo:reference id="userMessageApp" interface="com.zlebank.service.business.app.UserMessageApp" group="group01" version="1.0" />
+	<dubbo:reference id="userInfoQueryApp" interface="com.zlebank.service.user.app.UserInfoQueryApp" group="group01" version="1.0" />
+</beans>

@@ -1,0 +1,12 @@
+label.error{
+	width:195px;
+	height:34px;
+	background:url(../../images/base/_153.png) no-repeat right bottom;
+	float:left;
+	font-size:12px;
+	line-height:34px;
+	text-indent:38px;
+	margin-top:8px;	
+	position:absolute;	
+	display:none;	
+}
