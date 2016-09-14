@@ -385,7 +385,7 @@
 					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf1" checked="checked"/><span style="color:red;">&nbsp;已上架</span>
 					                                                        		</c:when>
 					                                                        		<c:otherwise>
-					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf1" /><span style="color:black;">&nbsp;上架</span>
+					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf1" /><span style="color:black;">&nbsp;下架</span>
 					                                                        		</c:otherwise>
 					                                                        	</c:choose>
 					                                                        </td>
@@ -395,7 +395,7 @@
 					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf2" checked="checked"/><span style="color:red;">&nbsp;已上架</span>
 					                                                        		</c:when>
 					                                                        		<c:otherwise>
-					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf2"/><span style="color:black;">&nbsp;上架</span>
+					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf2"/><span style="color:black;">&nbsp;下架</span>
 					                                                        		</c:otherwise>
 					                                                        	</c:choose>
 					                                                        </td>
@@ -405,7 +405,7 @@
 					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf3" checked="checked"/><span style="color:red;">&nbsp;已上架</span>
 					                                                        		</c:when>
 					                                                        		<c:otherwise>
-					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf3"/><span style="color:black;">&nbsp;上架</span>
+					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf3"/><span style="color:black;">&nbsp;下架</span>
 					                                                        		</c:otherwise>
 					                                                        	</c:choose>
 					                                                        </td>
@@ -415,7 +415,7 @@
 					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf4" checked="checked"/><span style="color:red;">&nbsp;已上架</span>
 					                                                        		</c:when>
 					                                                        		<c:otherwise>
-					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf4"/><span style="color:black;">&nbsp;上架</span>
+					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf4"/><span style="color:black;">&nbsp;下架</span>
 					                                                        		</c:otherwise>
 					                                                        	</c:choose>
 					                                                        </td>
@@ -425,7 +425,7 @@
 					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf5" checked="checked"/><span style="color:red;">&nbsp;已上架</span>
 					                                                        		</c:when>
 					                                                        		<c:otherwise>
-					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf5"/><span style="color:black;">&nbsp;上架</span>
+					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf5"/><span style="color:black;">&nbsp;下架</span>
 					                                                        		</c:otherwise>
 					                                                        	</c:choose>
 					                                                        </td>
@@ -435,7 +435,7 @@
 					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf6" checked="checked"/><span style="color:red;">&nbsp;已上架</span>
 					                                                        		</c:when>
 					                                                        		<c:otherwise>
-					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf6"/><span style="color:black;">&nbsp;上架</span>
+					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf6"/><span style="color:black;">&nbsp;下架</span>
 					                                                        		</c:otherwise>
 					                                                        	</c:choose>
 					                                                        </td>
@@ -445,7 +445,7 @@
 					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf7" checked="checked"/><span style="color:red;">&nbsp;已上架</span>
 					                                                        		</c:when>
 					                                                        		<c:otherwise>
-					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf7"/><span style="color:black;">&nbsp;上架</span>
+					                                                        			<input type="checkbox" value="${StandardProductBean.productId}" name="offshelf7"/><span style="color:black;">&nbsp;下架</span>
 					                                                        		</c:otherwise>
 					                                                        	</c:choose>
 					                                                        </td>

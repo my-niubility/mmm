@@ -92,13 +92,13 @@
                                                     </tr>
                                                     <tr>
                                                         <td width="5%">&nbsp;</td>
-                                                        <td width="10%">投资上限设定：</td>
-                                                        <td width="20%">
-                                                        	<input style="width:180px;height:20px;" readonly="readonly" type="text" name="scaleLimitFlag" value="<c:choose><c:when test="${product.scaleLimitFlag eq '0'}">不设定</c:when><c:when test="${product.scaleLimitFlag eq '1'}">设定</c:when></c:choose>" />
-                                                        </td>
 														<td width="10%">投资上限(份):</td>
 														<td width="20%">
 															<input style="width:180px;height:20px;" readonly="readonly" type="text" name="scaleLimit" value='${product.scaleLimit}'/>
+														</td>
+														<td width="10%">投资下限(份):</td>
+														<td width="20%">
+															<input class="text" style="width:180px;height:20px;" type="text" name="investMin" value="${product.investMin}" />
 														</td>
 														<td width="10%">利息返回方式:</td>
 														<td width="20%"s>
@@ -143,15 +143,16 @@
                                                         <td width="5%">&nbsp;</td>
                                                         <td width="10%">正常回购日：</td>
                                                         <td width="20%">
-                                                        	<input style="width:180px;height:20px;" readonly="readonly" type="text" name="nonbackday" value="${product.nonbackday}"/>
+                                                        	<input style="width:180px;height:20px;" readonly="readonly" type="text" name="nonbackday" value="<c:out value="${empty product.nonbackday ? '无' : product.nonbackday}"/>"/>
                                                         </td>
 														<td width="10%">合同到期日:</td>
 														<td width="20%">
 															<input style="width:180px;height:20px;" readonly="readonly" type="text" name="contrday" value="${product.contrday}"/>
+																																					
 														</td>
 														<td width="10%">项目成立条件:</td>
 														<td width="20%"s>
-															<input style="width:180px;height:20px;" readonly="readonly" type="text" name="establish" value="<c:choose><c:when test="${product.establish eq '0'}">不限</c:when><c:when test="${product.establish eq '1'}">比例</c:when><c:when test="${product.establish eq '2'}">下限</c:when></c:choose>" />
+															<input style="width:180px;height:20px;" readonly="readonly" type="text" name="establish" value="<c:choose><c:when test="${empty product.establish}">未选择</c:when><c:when test="${product.establish eq '1'}">比例</c:when><c:when test="${product.establish eq '2'}">下限</c:when></c:choose>" />
 														</td>
                                                         <td width="5%">&nbsp;</td>                                                        
                                                     </tr>
@@ -160,15 +161,15 @@
                                                         <td width="5%">&nbsp;</td>
                                                         <td width="10%">下限选择：</td>
                                                         <td width="20%">
-                                                        	<input style="width:180px;height:20px;" readonly="readonly" type="text" name="xxEstabValue" value="${product.xxEstabValue}"/>
+                                                        	<input style="width:180px;height:20px;" readonly="readonly" type="text" name="xxEstabValue" value="<c:out value="${empty product.xxEstabValue ? '无' : product.xxEstabValue}"/>"/>
                                                         </td>
 														<td width="10%">比例选择(%):</td>
 														<td width="20%">
-															<input style="width:180px;height:20px;" readonly="readonly" type="text" name="blEstabValue" value="${product.blEstabValue}" />
+															<input style="width:180px;height:20px;" readonly="readonly" type="text" name="blEstabValue" value="<c:out value="${empty product.blEstabValue ? '无' : product.blEstabValue}"/>" />
 														</td>
-														<td width="10%">是否存在补贴:</td>
+														<td width="10%">融资人编号:</td>
 														<td width="20%"s>
-															<input style="width:180px;height:20px;" readonly="readonly" type="text" name="subsidyFlag" value="<c:choose><c:when test="${product.subsidyFlag eq '0'}">不补贴</c:when><c:when test="${product.subsidyFlag eq '1'}">补贴</c:when></c:choose>" />
+															<input style="width:180px;height:20px;" readonly="readonly" type="text" name="financeId" value="${product.financeId}" />
 														</td>
                                                         <td width="5%">&nbsp;</td>                                                        
                                                     </tr>
@@ -177,31 +178,23 @@
                                                         <td width="5%">&nbsp;</td>
                                                         <td width="10%">补贴年化利率：</td>
                                                         <td width="20%">
-                                                        	<input style="width:180px;height:20px;" readonly="readonly" type="text" name="subsidyRate" value="${product.subsidyRate}"/>
+                                                        	<input style="width:180px;height:20px;" readonly="readonly" type="text" name="subsidyRate" value="<c:out value="${empty product.subsidyRate ? '0.00' : product.subsidyRate}"/>%"/>
                                                         </td>
 														<td width="10%">补贴天数:</td>
 														<td width="20%">
-															<input style="width:180px;height:20px;" readonly="readonly" type="text"  name="subsidyDay" value="${product.subsidyDay}" />
+															<input style="width:180px;height:20px;" readonly="readonly" type="text"  name="subsidyDay" value="<c:out value="${empty product.subsidyDay ? '0' : product.subsidyDay}"/>天" />
 														</td>
-														<td width="10%">融资人编号:</td>
-														<td width="20%"s>
-															<input style="width:180px;height:20px;" readonly="readonly" type="text" name="financeId" value="${product.financeId}" />
-														</td>
-                                                        <td width="5%">&nbsp;</td>                                                        
-                                                    </tr>
-                                                    <tr>
-                                                        <td width="5%">&nbsp;</td>
 														<td width="10%">融资人名称：</td>
                                                         <td width="20%">
                                                         	<input style="width:180px;height:20px;" readonly="readonly" type="text" name="financeName" value="${product.financeName}"/>
                                                         </td>
-														<td width="10%">投资下限:</td>
-														<td width="20%">
-															<input class="text" style="width:100px;height:20px;" type="text" name="investMin" value="${product.investMin}" />
-														</td>
+                                                        <td width="5%">&nbsp;</td>                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="5%">&nbsp;</td>
 														<td width="10%">红包类型：</td>
                                                         <td width="20%">
-                                                        	<input type="text" readonly="readonly" value="<c:choose><c:when test="${product.redType eq '01'}">按用户发放</c:when><c:when test="${product.redType eq '02'}">按产品发放</c:when><c:when test="${product.redType eq '03'}">按投资金额发放</c:when><c:when test="${product.redType eq '04'}">按活动类型发放</c:when></c:choose>">
+                                                        	<input type="text" readonly="readonly" value="<c:choose><c:when test="${empty product.redType}">未选择</c:when><c:when test="${product.redType eq '01'}">按用户发放</c:when><c:when test="${product.redType eq '02'}">按产品发放</c:when><c:when test="${product.redType eq '03'}">按投资金额发放</c:when><c:when test="${product.redType eq '04'}">按活动类型发放</c:when></c:choose>">
                                                         </td>
                                                         <td width="5%">&nbsp;</td>                                                        
                                                     </tr>

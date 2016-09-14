@@ -145,19 +145,19 @@
 				 $("#tody").show();
 				 $("#todt").hide();
 			 }else if("1"==bb){
-				 $("#hody").show();
-				 $("#hodt").hide();
-				 $("#body").show();
-				 $("#bodt").hide();
-				 $("#tody").show();
-				 $("#todt").hide();
-			 }else if("2"==bb){
 				 $("#hodt").show();
 				 $("#hody").hide();
 				 $("#bodt").show();
 				 $("#body").hide();
 				 $("#todt").show();
 				 $("#tody").hide();
+			 }else if("2"==bb){
+				 $("#hody").show();
+				 $("#hodt").hide();
+				 $("#body").show();
+				 $("#bodt").hide();
+				 $("#tody").show();
+				 $("#todt").hide();
 			 }else if("3"==bb){
 				 $("#hody").show();
 				 $("#hodt").hide();
@@ -418,7 +418,7 @@
                                                         <td>项目成立条件：</td>
                                                         <td width="20%">
                                                             <select id="establish" name="establish" style="height:20px;">
-                                                                <option value="" selected="true">不限</option>
+                                                                <option value="" selected="true">未选择</option>
                                                                 <option value="1" >比例</option>
                                                                 <option value="2" >下线</option>
                                                             </select>

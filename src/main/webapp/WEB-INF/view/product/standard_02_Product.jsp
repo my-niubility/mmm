@@ -14,6 +14,10 @@
 		 $(function(){
 		  $(":radio").click(function(){
 			  $("#financeName").val($(this).val());
+			  var financeName = $("#financeName").val();
+			  if(financeName){
+				  $("#submitPre").show();
+			  }
 		  });
 		 });
 	</script>
@@ -87,7 +91,7 @@
                                                         <td width="2%">&nbsp;</td>
                                                         <td></td>
                                                         <td>
-                                                        <input id="submitPre" class="text" type="submit" name="submitPre" value="发布预览" maxlength="50"/>
+                                                        <input id="submitPre" class="text" type="submit" style="display: none;" name="submitPre" value="发布预览" maxlength="50"/>
                                                         </td>
                                                         <td>&nbsp;</td>
                                                     </tr>

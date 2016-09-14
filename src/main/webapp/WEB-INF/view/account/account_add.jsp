@@ -10,15 +10,7 @@
     <script src="${ctx}/js/jquery-1.12.2.min.js" type="text/javascript"></script>
     <script src="${ctx}/js/jquery.validate.min.js" type="text/javascript"></script>
     <script src="${ctx}/js/sha512.js" type="text/javascript"></script>
-    <script type="text/javascript">
-	    function checkSubmit(){
-	    	if(window.confirm('你确定要增加用户吗？')){
-	            return true;
-	         }else{
-	            return false;
-	        }
-	    }
-    </script>
+    
 
    	<script type="text/javascript">
 	    $(function(){
@@ -42,7 +34,7 @@
     </script>
 
    	<script type="text/javascript">
-	    $(function(){
+	 	$(function(){
 	    	$("#accountName").blur(function(e){
 	    		var accountName = $("#accountName").val();
 	    		$.post("${ctx}/account/checkQuery", { "accountName": accountName},
@@ -54,7 +46,7 @@
 	    					 }
 	    				     }, "json");
 	    	});
-	    });
+	    	
     </script>
     
     <script type="text/javascript">
@@ -67,6 +59,7 @@
 	        			},
 	        		password:{
 	        			required:true,
+	        			minlength:6,
 	        			},
 	        		passwordCheck:{
 	        			required:true,
@@ -75,6 +68,7 @@
 	        		mobile:{
 	        			required:true,
 	        			digits:true,
+	        			phoneCheck:true,
 	        		},
 	        		realName:{
 	        			required:true,
@@ -91,7 +85,7 @@
 				},
 				messages:{
 					accountName:{required:"登录账户不能为空"},
-					password:{required:"初始密码不能为空"},
+					password:{required:"初始密码不能为空",minlength:"长度大于等于6位"},
 					realName:{required:"用户名称不能为空"},
 					passwordCheck:{
 						required:"初始密码不能为空",
@@ -107,21 +101,33 @@
 	    
    		jQuery.validator.addMethod("StringCheck", function(value, element) {       
    			return this.optional(element) || /^([a-zA-z_]{1})([\w]*)$/g.test(value);}, "只能包括英文字母、数字和下划线"); 
+   		jQuery.validator.addMethod("phoneCheck", function(value, element) {       
+   			return this.optional(element) || /^((\+?86)|(\(\+86\)))?(13[0-9][0-9]{8}|17[0-9]{9}|15[0-9][0-9]{8}|18[0-9]{9}|14[0-9]{9})$/g.test(value);}, "请填写正确的手机号");
+   		
    		
 		jQuery.validator.addMethod("passCheck", function(value, element) {
 			var  J_date_1 =$("#password").val();
-			if(this.optional(element) || (J_date_1 == value)){
-				return true;
-			}else{
-				$("#passwordCheck").focus();
-				return false;
-			}
+				if(this.optional(element) || (J_date_1 == value)){
+					return true;
+				}else{
+					$("#passwordCheck").focus();
+					return false;
+				}
+			
 			
 		},"两次密码不一致");		
 
 
 	</script>	
-    
+    <script type="text/javascript">
+	    function checkSubmit(){
+	    	if(window.confirm('你确定要增加用户吗？')){
+	            return true;
+	         }else{
+	            return false;
+	        }
+	    }
+    </script>
     
 </head>
     <body>
@@ -184,14 +190,14 @@
                                                     <tr>
                                                         <td width="2%">&nbsp;</td>
                                                         <td>用户密码：</td>
-                                                        <td><input id="password" class="text" type="password" name="password" value="" maxlength="12"/></td>
+                                                        <td><input id="password" class="text" type="password" name="password" value="" maxlength="18" /></td>
                                                         <td style="color: red;">(*必填) &nbsp;用户登录密码，初始密码</td>
                                                         <td width="2%">&nbsp;</td>
                                                     </tr>
                                                     <tr>
                                                         <td width="2%">&nbsp;</td>
                                                         <td>确认密码：</td>
-                                                        <td><input id="passwordCheck" class="text" type="password" name="passwordCheck" value="" maxlength="12"/></td>
+                                                        <td><input id="passwordCheck" class="text" type="password" name="passwordCheck" value="" maxlength="18"/></td>
                                                         <td style="color: red;">(*必填) &nbsp;用户登录密码，再次确认密码</td>
                                                         <td width="2%">&nbsp;</td>
                                                     </tr>

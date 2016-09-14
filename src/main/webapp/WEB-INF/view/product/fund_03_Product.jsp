@@ -96,10 +96,10 @@
                                                         <td width="20%">
                                                         	<input class="text" style="width:100px;height:20px;" type="text" name="investMin" value="${fund.investMin}" />
                                                         </td>
-														<td width="10%">是否存在补贴:</td>
-														<td width="20%">
-															<input style="width:180px;height:20px;" readonly="readonly" type="text" name="subsidyFlag" value="<c:choose><c:when test="${fund.subsidyFlag eq '0'}">不补贴</c:when><c:when test="${fund.subsidyFlag eq '1'}">补贴</c:when></c:choose>" />
-														</td>
+                                                        <td width="10%">补贴年化利率：</td>
+                                                        <td width="20%">
+                                                        	<input style="width:180px;height:20px;" readonly="readonly" type="text" name="subsidyRate" value="<c:out value="${empty fund.subsidyRate ? '0.00' :fund.subsidyRate}"/>%"/>
+                                                        </td>
 														<td width="10%">融资人编号:</td>
 														<td width="20%"s>
 															<input style="width:180px;height:20px;" readonly="readonly" type="text" name="financeId" value="${fund.financeId}" />
@@ -109,29 +109,27 @@
 
                                                     <tr>
                                                         <td width="5%">&nbsp;</td>
-                                                        <td width="10%">补贴年化利率：</td>
-                                                        <td width="20%">
-                                                        	<input style="width:180px;height:20px;" readonly="readonly" type="text" name="subsidyRate" value="${fund.subsidyRate}"/>
-                                                        </td>
+                                                        
 														<td width="10%">补贴天数:</td>
 														<td width="20%">
-															<input style="width:180px;height:20px;" readonly="readonly" type="text"  name="subsidyDay" value="${fund.subsidyDay}" />
+															<input style="width:180px;height:20px;" readonly="readonly" type="text"  name="subsidyDay" value="<c:out value="${empty fund.subsidyDay ? '0' : fund.subsidyDay}"/>天 " />
 														</td>
 														<td width="10%">融资人名称：</td>
                                                         <td width="20%">
                                                         	<input style="width:180px;height:20px;" readonly="readonly" type="text" name="financeName" value="${fund.financeName}"/>
                                                         </td>
+                                                        <td width="10%">红包类型：</td>
+                                                        <td width="20%">
+                                                        	<input type="text" readonly="readonly" value="<c:choose><c:when test="${empty fund.redType eq '99'}">未选择</c:when><c:when test="${fund.redType eq '01'}">按用户发放</c:when><c:when test="${fund.redType eq '02'}">按产品发放</c:when><c:when test="${fund.redType eq '03'}">按投资金额发放</c:when><c:when test="${fund.redType eq '04'}">按活动类型发放</c:when></c:choose>" />
+                                                        </td>
                                                         <td width="5%">&nbsp;</td>                                                        
                                                     </tr>
                                                     <tr>
                                                         <td width="5%">&nbsp;</td>
-                                                        <td width="10%">红包类型：</td>
-                                                        <td width="20%">
-                                                        	<input type="text" readonly="readonly" value="<c:choose><c:when test="${fund.redType eq '01'}">按用户发放</c:when><c:when test="${fund.redType eq '02'}">按产品发放</c:when><c:when test="${fund.redType eq '03'}">按投资金额发放</c:when><c:when test="${fund.redType eq '04'}">按活动类型发放</c:when></c:choose>" />
-                                                        </td>
+                                                        
 														<td width="10%">产品小类：</td>
 														<td width="20%">
-															<input type="text" readonly="readonly" value="<c:choose><c:when test="${fund.productTittleType eq '201'}">货币型基金</c:when><c:when test="${fund.productTittleType eq '202'}">债券型基金</c:when><c:when test="${fund.productTittleType eq '203'}">股票型基金</c:when><c:when test="${fund.productTittleType eq '204'}">理财型基金</c:when></c:choose>" />
+															<input type="text" readonly="readonly" value="<c:choose><c:when test="${empty fund.productTittleType}">未选择</c:when><c:when test="${fund.productTittleType eq '201'}">货币型基金</c:when><c:when test="${fund.productTittleType eq '202'}">债券型基金</c:when><c:when test="${fund.productTittleType eq '203'}">股票型基金</c:when><c:when test="${fund.productTittleType eq '204'}">理财型基金</c:when></c:choose>" />
 														</td>
 														<td width="10%"></td>
 														<td width="20%">
